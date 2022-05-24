@@ -1,0 +1,8 @@
+{
+    "propel": {
+        "paths": {
+            "schemaDir": "\/var\/www\/html\/jungle\/vendor\/bin",
+            "phpDir": "\/var\/www\/html\/jungle\/vendor\/bin"
+        }
+    }
+}

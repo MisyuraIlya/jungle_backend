@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" namespace="\Ps" defaultPhpNamingMethod="underscore">
+  <table name="administrators" idMethod="native" phpName="Administrators">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="100"/>
+    <column name="password" phpName="Password" type="VARCHAR" size="100"/>
+    <column name="token" phpName="Token" type="VARCHAR" size="100"/>
+    <column name="role" phpName="Role" type="VARCHAR" size="100"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="255"/>
+    <column name="app_id" phpName="AppId" type="LONGVARCHAR"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="articles" idMethod="native" phpName="Articles">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="description" phpName="Description" type="VARCHAR" size="500"/>
+    <column name="text" phpName="Text" type="LONGVARCHAR"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="banners" idMethod="native" phpName="Banners">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="type" phpName="Type" type="INTEGER"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="text" phpName="Text" type="VARCHAR" size="1000"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="link" phpName="Link" type="VARCHAR" size="255"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="categories" idMethod="native" phpName="Categories">
+    <column name="id" phpName="Id" type="INTEGER" required="true"/>
+    <column name="parent_id" phpName="ParentId" type="INTEGER"/>
+    <column name="ex_id" phpName="ExId" type="VARCHAR" size="255"/>
+    <column name="code" phpName="Code" type="VARCHAR" size="255"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="inner_title" phpName="InnerTitle" type="VARCHAR" size="255"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="img_wide" phpName="ImgWide" type="VARCHAR" size="255"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="distribution_area" idMethod="native" phpName="DistributionArea">
+    <column name="Id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="Title" phpName="Title" type="VARCHAR" size="255" required="true"/>
+    <column name="Description" phpName="Description" type="VARCHAR" size="1023" required="true"/>
+    <column name="Color" phpName="Color" type="VARCHAR" size="10" required="true"/>
+    <column name="Price" phpName="Price" type="FLOAT" required="true"/>
+    <column name="MinOrderPrice" phpName="Minorderprice" type="FLOAT" required="true"/>
+    <column name="MinOrderPriceForFreeShipping" phpName="Minorderpriceforfreeshipping" type="FLOAT" required="true"/>
+    <column name="IsPublished" phpName="Ispublished" type="BOOLEAN" size="1" required="true"/>
+    <column name="Created" phpName="Created" type="TIMESTAMP" required="true"/>
+    <column name="Modified" phpName="Modified" type="TIMESTAMP" required="true"/>
+    <column name="Location" phpName="Location" type="VARCHAR" size="1023" required="true"/>
+    <column name="IsDeleted" phpName="Isdeleted" type="BOOLEAN" size="1" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="filter_families" idMethod="native" phpName="FilterFamilies">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="filters" idMethod="native" phpName="Filters">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="parent_id" phpName="ParentId" type="INTEGER"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="notification" idMethod="native" phpName="Notification">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="description" phpName="Description" type="LONGVARCHAR"/>
+    <column name="link" phpName="Link" type="VARCHAR" size="255"/>
+    <column name="date" phpName="Date" type="VARCHAR" size="255"/>
+    <column name="send_to" phpName="SendTo" type="INTEGER" defaultValue="1"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="video" phpName="Video" type="VARCHAR" size="255"/>
+    <column name="course_id" phpName="CourseId" type="VARCHAR" size="255"/>
+    <column name="price_for" phpName="PriceFor" type="VARCHAR" size="255"/>
+    <column name="public" phpName="Public" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="1"/>
+    <column name="isDeleted" phpName="Isdeleted" type="BOOLEAN" size="1" required="true" defaultValue="false"/>
+    <column name="created" phpName="Created" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="modified" phpName="Modified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="order_parts" idMethod="native" phpName="OrderParts">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="order_id" phpName="OrderId" type="INTEGER"/>
+    <column name="user_id" phpName="UserId" type="INTEGER"/>
+    <column name="date" phpName="Date" type="VARCHAR" size="255"/>
+    <column name="makat" phpName="Makat" type="VARCHAR" size="255"/>
+    <column name="barcode" phpName="Barcode" type="VARCHAR" size="255"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="price" phpName="Price" type="VARCHAR" size="255"/>
+    <column name="total" phpName="Total" type="VARCHAR" size="255"/>
+    <column name="quantity" phpName="Quantity" type="VARCHAR" size="255"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="orders" idMethod="native" phpName="Orders">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="date" phpName="Date" type="VARCHAR" size="255"/>
+    <column name="format_date" phpName="FormatDate" type="VARCHAR" size="255"/>
+    <column name="time" phpName="Time" type="VARCHAR" size="255"/>
+    <column name="user_id" phpName="UserId" type="INTEGER"/>
+    <column name="delivery_id" phpName="DeliveryId" type="INTEGER"/>
+    <column name="pickup" phpName="Pickup" type="VARCHAR" size="255"/>
+    <column name="total" phpName="Total" type="VARCHAR" size="255"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255"/>
+    <column name="comment" phpName="Comment" type="VARCHAR" size="255"/>
+    <column name="transaction" phpName="Transaction" type="VARCHAR" size="1023"/>
+    <column name="mail" phpName="Mail" type="VARCHAR" size="255"/>
+    <column name="tel" phpName="Tel" type="VARCHAR" size="255"/>
+    <column name="first_name" phpName="FirstName" type="VARCHAR" size="255"/>
+    <column name="last_name" phpName="LastName" type="VARCHAR" size="255"/>
+    <column name="passport" phpName="Passport" type="VARCHAR" size="255"/>
+    <column name="town" phpName="Town" type="VARCHAR" size="255"/>
+    <column name="address" phpName="Address" type="VARCHAR" size="255"/>
+    <column name="zip" phpName="Zip" type="VARCHAR" size="255"/>
+    <column name="house" phpName="House" type="VARCHAR" size="10"/>
+    <column name="appartment" phpName="Appartment" type="VARCHAR" size="10"/>
+    <column name="floor" phpName="Floor" type="VARCHAR" size="10"/>
+    <column name="entrance" phpName="Entrance" type="VARCHAR" size="10"/>
+    <column name="created" phpName="Created" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="modified" phpName="Modified" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="products" idMethod="native" phpName="Products">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="ex_id" phpName="ExId" type="VARCHAR" size="255"/>
+    <column name="parent_id" phpName="ParentId" type="INTEGER"/>
+    <column name="makat" phpName="Makat" type="VARCHAR" size="100"/>
+    <column name="category" phpName="Category" type="INTEGER"/>
+    <column name="category_id" phpName="CategoryId" type="INTEGER"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="barcode" phpName="Barcode" type="VARCHAR" size="100"/>
+    <column name="price" phpName="Price" type="VARCHAR" size="100"/>
+    <column name="price_ml" phpName="PriceMl" type="VARCHAR" size="100"/>
+    <column name="discount" phpName="Discount" type="VARCHAR" size="100"/>
+    <column name="unit" phpName="Unit" type="VARCHAR" size="50"/>
+    <column name="img" phpName="Img" type="LONGVARCHAR"/>
+    <column name="img_wide" phpName="ImgWide" type="VARCHAR" size="255"/>
+    <column name="file" phpName="File" type="VARCHAR" size="255"/>
+    <column name="desc1" phpName="Desc1" type="VARCHAR" size="8000"/>
+    <column name="desc2" phpName="Desc2" type="VARCHAR" size="8000"/>
+    <column name="desc3" phpName="Desc3" type="VARCHAR" size="500"/>
+    <column name="desc4" phpName="Desc4" type="VARCHAR" size="500"/>
+    <column name="desc5" phpName="Desc5" type="VARCHAR" size="500"/>
+    <column name="sale" phpName="Sale" type="INTEGER"/>
+    <column name="home" phpName="Home" type="INTEGER"/>
+    <column name="new_one" phpName="NewOne" type="INTEGER"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255"/>
+    <column name="volume" phpName="Volume" type="VARCHAR" size="255"/>
+    <column name="filter_id" phpName="FilterId" type="LONGVARCHAR"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="sales" idMethod="native" phpName="Sales">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="ex_id" phpName="ExId" type="INTEGER" required="true"/>
+    <column name="quantity" phpName="Quantity" type="INTEGER" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255" required="true"/>
+    <column name="price" phpName="Price" type="INTEGER" required="true"/>
+    <column name="end_date" phpName="EndDate" type="VARCHAR" size="255" required="true"/>
+    <column name="remarks" phpName="Remarks" type="VARCHAR" size="255" required="true"/>
+    <column name="code" phpName="Code" type="INTEGER" required="true"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER" required="true"/>
+    <column name="price2" phpName="Price2" type="INTEGER" required="true"/>
+    <column name="quantity2" phpName="Quantity2" type="INTEGER" required="true"/>
+    <column name="price3" phpName="Price3" type="INTEGER" required="true"/>
+    <column name="quantity3" phpName="Quantity3" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="sales_barcode" idMethod="native" phpName="SalesBarcode">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="ex_id" phpName="ExId" type="INTEGER" required="true"/>
+    <column name="item_code" phpName="ItemCode" type="VARCHAR" size="255" required="true"/>
+    <column name="price" phpName="Price" type="INTEGER" required="true"/>
+    <column name="code" phpName="Code" type="VARCHAR" size="255" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="shipping" idMethod="native" phpName="Shipping">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="price" phpName="Price" type="VARCHAR" size="255"/>
+    <column name="makat" phpName="Makat" type="VARCHAR" size="255"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="slider" idMethod="native" phpName="Slider">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="grid_id" phpName="GridId" type="INTEGER"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="link" phpName="Link" type="VARCHAR" size="255"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="255"/>
+    <column name="orden" phpName="Orden" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="users" idMethod="native" phpName="Users">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="site_id" phpName="SiteId" type="INTEGER"/>
+    <column name="mail" phpName="Mail" type="VARCHAR" size="255"/>
+    <column name="mail_second" phpName="MailSecond" type="VARCHAR" size="255"/>
+    <column name="tel" phpName="Tel" type="VARCHAR" size="255"/>
+    <column name="mobile" phpName="Mobile" type="VARCHAR" size="255"/>
+    <column name="first_name" phpName="FirstName" type="VARCHAR" size="255"/>
+    <column name="last_name" phpName="LastName" type="VARCHAR" size="255"/>
+    <column name="type" phpName="Type" type="INTEGER"/>
+    <column name="unpublished" phpName="Unpublished" type="INTEGER"/>
+    <column name="password" phpName="Password" type="VARCHAR" size="255"/>
+    <column name="token" phpName="Token" type="VARCHAR" size="500"/>
+    <column name="passport" phpName="Passport" type="VARCHAR" size="255"/>
+    <column name="recovery" phpName="Recovery" type="VARCHAR" size="255"/>
+    <column name="img" phpName="Img" type="VARCHAR" size="255"/>
+    <column name="facebook_id" phpName="FacebookId" type="VARCHAR" size="255"/>
+    <column name="google_id" phpName="GoogleId" type="VARCHAR" size="255"/>
+    <column name="town" phpName="Town" type="VARCHAR" size="255"/>
+    <column name="address" phpName="Address" type="VARCHAR" size="255"/>
+    <column name="zip" phpName="Zip" type="VARCHAR" size="100"/>
+    <column name="accept" phpName="Accept" type="INTEGER"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>
